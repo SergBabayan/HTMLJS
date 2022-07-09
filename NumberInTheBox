@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>Task.corrected</title>
+
+    <style>
+        body {
+            height: 600px;
+            background: linear-gradient(45deg, #393b48, #374bba);
+        }
+
+        p {
+            text-align: center;
+            color: ghostwhite;
+            font-family: Arial;
+        }
+
+        #B1 {
+            width: 20%;
+            height: 40px;
+            margin-left: 200px;
+            border: 2px solid white;
+            border-radius: 20px;
+            font-size: 22px;
+            font-family: 'Times New Roman';
+            -webkit-transition-duration: 0.4s;
+            -o-transition-duration: 0.4s;
+
+        }
+
+            #B1:hover {
+                background-color: #282c4b;
+                color: whitesmoke;
+
+            }
+
+        #B2 {
+            width: 20%;
+            height: 40px;
+            margin-left: 350px;
+            border: 1.5px solid white;
+            border-radius: 20px;
+            font-size: 22px;
+            font-family: 'Times New Roman';
+            -webkit-transition-duration: 0.4s;
+            -o-transition-duration: 0.4s;
+        }
+
+            #B2:hover {
+                background-color: #282c4b;
+                color: whitesmoke;
+            }
+        #NUM {
+            margin-left: 400px;
+            height: 60px;
+            width: 450px;
+            border: 2px solid black;
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Times New Roman';
+        }
+    </style>
+
+    <script>
+        var box = document.getElementById('NUM');
+
+        function plus() {
+
+           ++document.getElementById('NUM').value;
+
+        }
+        function minus() {
+            --document.getElementById('NUM').value;
+        }
+    </script>
+</head>
+<body>
+    <hr />
+    <br />
+    <input type="button" id="B1" value="Plus" onclick="plus()"/>
+    <input type="button" id="B2" value="Minus" onclick="minus()"/>
+    <br />
+    <br />
+    <hr />
+    <br />
+    <input type="number" id="NUM" value="0" name="sss" />
+    <br />
+    <br />
+    <hr />
+    <p>&copy;Serg Babayan-Task(corrected)</p>
+</body>
+</html>
