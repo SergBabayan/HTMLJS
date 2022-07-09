@@ -1,0 +1,148 @@
+<html>
+    <title>Task</title>
+    <style>
+        .page {
+            text-align: center;
+            margin: 120px;
+            }
+        .button1 {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 18px;
+            margin: 20px;
+            width: 30%;
+            height: 40px;
+            -webkit-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+            border-radius: 40px;
+            border: 1px solid #808080;
+        }
+        .button1:hover {
+            background-color: #00FF00;
+            color: white;
+        } 
+
+        .button2 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 18px;
+            margin:20px;
+            width: 30%;
+            height: 40px;
+            -webkit-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+            border-radius: 40px;
+            border: 1px solid #808080;
+        }
+        .button2:hover {
+            background-color: #DC143C;
+            color:white;
+        }
+
+        .button3 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 18px;
+            margin: 20px;
+            width: 30%;
+            height: 40px;
+            -webkit-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+            border-radius: 40px;
+            border: 1px solid #808080;
+        }
+        .button3:hover {
+            background-color: #FF4500;
+            color:white;
+        }
+
+        .button4 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 18px;
+            margin: 20px;
+            width: 30%;
+            height: 40px;
+            -webkit-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+            border-radius: 40px;
+            border: 1px solid #808080;
+        }
+        .button4:hover {
+            background-color: #4169E1;
+            color:white;
+        }
+
+        .button5 {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 18px;
+            margin: 20px;
+            width: 30%;
+            height: 40px;
+            -webkit-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+            border-radius: 40px;
+            border: 1px solid #808080;
+        }
+        .button5:hover{
+            background-color: #ff8C00;
+            color:white;
+        }
+
+        .button6 {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 18px;
+            margin:20px;
+            width: 30%;
+            height: 40px;
+            -webkit-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+            border-radius: 40px;
+            border: 1px solid #808080;
+        }
+        .button6:hover {
+            background-color:#9932CC;
+            color: white;
+        }
+    </style>
+
+    <script>
+        var greencolor = ["#7CFC00"];
+        var redcolor = ["#FF0000"];
+        var orangeredcolor = ["#FF4500"];
+        var bluecolor = ["#0000FF"];
+        var orangecolor = ["#FFA500"];
+        var purplecolor = ["#800080"];
+
+function purple(){
+    document.body.style.background = purplecolor;
+}
+
+function orangered(){
+    document.body.style.background = orangeredcolor;
+}
+
+function blue(){
+    document.body.style.background = bluecolor;
+}
+
+function orange(){
+    document.body.style.background = orangecolor;
+}
+ 
+function green(){
+    document.body.style.background = greencolor;
+}
+
+function red(){
+    document.body.style.background = redcolor;
+}
+    </script>
+
+    <body>
+        <div class="page">
+            <button class="button1" onclick="green()">Green Background</button>
+            <button class="button2" onclick="red()">Red Background</button>
+            <button class="button3" onclick="orangered()">Orangered Background</button>
+            <button class="button4" onclick="blue()">Blue Background</button>
+            <button class="button5" onclick="orange()">Orange Background</button>
+            <button class="button6" onclick="purple()">Purple Background</button>
+        </div>
+    </body>
+</html>
