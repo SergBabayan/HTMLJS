@@ -1,0 +1,164 @@
+<html>
+<head>
+    <title>Калькулятор</title>
+    <script>
+        var op;
+        function calc() {
+            var result;
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            switch (op) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2) {
+                        result = num1 / num2;
+                    } else {
+                        result = 'На 0 делить нельзя!';
+                    }
+                    break;
+                default:
+                    result = 'Выбрать операцию';
+            }
+
+            document.getElementById('resultat').innerHTML = result;
+        }
+    </script>
+
+    <style>
+        #num1 {
+            text-align: center;
+            border: 2px solid #507a7a;
+            height: 30px;
+            font-size: 20px;
+            width: 25%;
+            margin-top: 15px;
+        }
+
+        #num2 {
+            margin-top: 15px;
+            text-align: center;
+            border: 2px solid #507a7a;
+            height: 30px;
+            font-size: 20px;
+            width: 25%;
+        }
+
+        .plus {
+            border: 1px solid #507a7a;
+            margin-top: 40px;
+            width: 100px;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            background-color: #62a2a2;
+            -webkit-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+        }
+
+            .plus:hover {
+                color: #507a7a;
+                border: 1px solid #507a7a;
+                background-color: white;
+            }
+
+        .minus {
+            border: 1px solid #507a7a;
+            margin-top: 40px;
+            width: 100px;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            background-color: #62a2a2;
+            -webkit-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+        }
+
+            .minus:hover {
+                color: #507a7a;
+                border: 1px solid #507a7a;
+                background-color: white;
+            }
+
+        .divide {
+            border: 1px solid #507a7a;
+            margin-top: 40px;
+            width: 100px;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            background-color: #62a2a2;
+            -webkit-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+        }
+
+            .divide:hover {
+                color: #507a7a;
+                border: 1px solid #507a7a;
+                background-color: white;
+            }
+
+        .times {
+            border: 1px solid #507a7a;
+            margin-top: 40px;
+            width: 100px;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            background-color: #62a2a2;
+            -webkit-transition-duration: 0.6s;
+            -o-transition-duration: 0.6s;
+        }
+
+            .times:hover {
+                color: #507a7a;
+                border: 1px solid #507a7a;
+                background-color: white;
+            }
+        .box {
+            margin-top: 30px;
+            border: 2px solid #507a7a;
+            text-align: center;
+            width: 50%;
+            height: 250px;
+            font-family: 'Myriad Pro';
+            background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+            margin-left: 250px;
+        }
+
+        #resultat {
+            font-size: 30px;
+            font-family: 'Myriad Pro';
+            color: #507a7a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <hr id="hr" />
+        <input id="num1" />
+        <input id="num2" />
+        <br />
+        <br />
+        <strong id="resultat"></strong>
+        <br />
+        <hr />
+
+        <div id="operator_btns">
+            <button id="plus" class="plus" onclick="op = '+'; calc()">+</button>
+            <button id="minus" class="minus" onclick="op='-'; calc()">-</button>
+            <button id="times" class="times" onclick="op='*'; calc()">x</button>
+            <button id="divide" class="divide" onclick="op='/'; calc()">:</button>
+        </div>
+        <br />
+    </div>
+</body>
+</html>
