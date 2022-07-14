@@ -143,7 +143,7 @@
             width: 50%;
             height: 250px;
             font-family: 'Myriad Pro';
-            background: radial-gradient(at top, #FEFFFF, #A7CECC);
+            background: radial-gradient(at top, #FEFFFF, #A7CECC, #489090);
             margin-left: 250px;
         }
         #resultat {
