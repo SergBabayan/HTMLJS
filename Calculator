@@ -24,10 +24,7 @@
                         result = 'На 0 делить нельзя!';
                     }
                     break;
-                default:
-                    result = 'Выбрать операцию';
             }
-
             document.getElementById('resultat').innerHTML = result;
         }
     </script>
@@ -40,7 +37,8 @@
             font-size: 20px;
             width: 25%;
             margin-top: 15px;
-        }   
+        }
+
         #num2 {
             margin-top: 15px;
             text-align: center;
@@ -49,17 +47,19 @@
             font-size: 20px;
             width: 25%;
         }
+
         .plus {
             border: 1px solid #507a7a;
-            margin-top: 10px;
+            margin-top: 30px;
             width: 100px;
             font-size: 20px;
             text-align: center;
             color: white;
-            background-color: #507a7a;
+            background-color: #62a2a2;
             -webkit-transition-duration: 0.6s;
             -o-transition-duration: 0.6s;
         }
+
             .plus:hover {
                 color: #507a7a;
                 border: 1px solid #507a7a;
@@ -68,15 +68,16 @@
 
         .minus {
             border: 1px solid #507a7a;
-            margin-top: 10px;
+            margin-top: 30px;
             width: 100px;
             font-size: 20px;
             text-align: center;
             color: white;
-            background-color: #507a7a;
+            background-color: #62a2a2;
             -webkit-transition-duration: 0.6s;
             -o-transition-duration: 0.6s;
         }
+
             .minus:hover {
                 color: #507a7a;
                 border: 1px solid #507a7a;
@@ -85,15 +86,16 @@
 
         .divide {
             border: 1px solid #507a7a;
-            margin-top: 20px;
+            margin-top: 30px;
             width: 100px;
             font-size: 20px;
             text-align: center;
             color: white;
-            background-color: #507a7a;
+            background-color: #62a2a2;
             -webkit-transition-duration: 0.6s;
             -o-transition-duration: 0.6s;
         }
+
             .divide:hover {
                 color: #507a7a;
                 border: 1px solid #507a7a;
@@ -102,40 +104,21 @@
 
         .times {
             border: 1px solid #507a7a;
-            margin-top: 10px;
+            margin-top: 30px;
             width: 100px;
             font-size: 20px;
             text-align: center;
             color: white;
-            background-color: #507a7a;
+            background-color: #62a2a2;
             -webkit-transition-duration: 0.6s;
             -o-transition-duration: 0.6s;
         }
+
             .times:hover {
                 color: #507a7a;
                 border: 1px solid #507a7a;
                 background-color: white;
             }
-
-        #b5 {
-            border: 2px solid #507a7a;
-            width: 30%;
-            height: 40px;
-            margin-top: 15px;
-            font-size: 20px;
-            font-family: 'Myriad Pro';
-            border-radius: 20px;
-            color: white;
-            background-color: #507a7a;
-            -webkit-transition-duration: 0.2s;
-            -o-transition-duration: 0.2s;
-        }
-            #b5:hover {
-                border: 2px solid #507a7a;
-                color: #507a7a;
-                background-color: white;
-            }
-
         .box {
             margin-top: 30px;
             border: 2px solid #507a7a;
@@ -143,13 +126,19 @@
             width: 50%;
             height: 250px;
             font-family: 'Myriad Pro';
-            background: radial-gradient(at top, #FEFFFF, #A7CECC, #489090);
+            background: linear-gradient(45deg, #EECFBA, #C5DDE8);
             margin-left: 250px;
         }
+
         #resultat {
             font-size: 30px;
             font-family: 'Myriad Pro';
             color: #507a7a;
+        }
+        .divres {
+            height: 30px;
+            width: 50%;
+            margin-left: 159px;
         }
     </style>
 </head>
@@ -159,18 +148,20 @@
         <hr id="hr" />
         <input id="num1" />
         <input id="num2" />
-
-        <div id="operator_btns">
-            <button id="plus" class="plus" onclick="op='+'">+</button>
-            <button id="minus" class="minus" onclick="op='-'">-</button>
-            <button id="times" class="times" onclick="op='*'">x</button>
-            <button id="divide" class="divide" onclick="op='/'">:</button>
+        <br />
+        <br />
+        <div class="divres">
+            <strong id="resultat"></strong>
         </div>
         <br />
-        <strong id="resultat"></strong>
+        <hr/>
+        <div id="operator_btns">
+            <button id="plus" class="plus" onclick="op = '+'; calc()">+</button>
+            <button id="minus" class="minus" onclick="op='-'; calc()">-</button>
+            <button id="times" class="times" onclick="op='*'; calc()">x</button>
+            <button id="divide" class="divide" onclick="op='/'; calc()">:</button>
+        </div>
         <br />
-        <button id="b5" onclick="calc()">Посчитать</button>
-        <hr />
     </div>
 </body>
 </html>
