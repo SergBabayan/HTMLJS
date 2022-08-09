@@ -1,0 +1,221 @@
+<body>
+        <div class="dclass1" id="dclass1">
+            <hr>
+            <h1 id="h1">To Do List</h1>
+            <hr id="hr1">
+            <input type="text"  id="input">
+            <button id="button1" onclick="add(); bound()">Add Task</button>
+            <div class="tasks"></div>
+            <input onchange="backgroundchange()" type="checkbox" id="checkbox">
+            <label id="label" for="checkbox">White Background</label>
+        </div>
+    </body>
+    
+    <script>
+        function add() {
+            var tasks = document.querySelector('.tasks');
+            var input = document.getElementById('input').value;
+            if (input == 0) {
+                alert("Add Task");
+            }
+            else {
+                tasks.innerHTML += `<li id="task"><button class="delete">X</button> ${input}</li>`;
+            }
+            var current_tasks = document.querySelectorAll('.delete');
+            for (var i=0; i<current_tasks.length; i++){
+            current_tasks[i].onclick = function(){
+                this.parentNode.remove();
+
+            }
+        }
+    }
+    function bound() {
+        var OffButton = document.querySelector('#button1');
+        if (document.querySelectorAll('.delete').length > 8) {
+            OffButton.disabled = true;
+            alert("You can't add more");
+        }
+    }
+    function bound2() {
+        var OffButton = document.querySelector('#button1');
+        if (document.querySelectorAll('.delete').length < 9) {
+            OffButton.disabled = false;
+        }
+    }
+    setInterval(bound2, 500);
+
+    function fon() {
+        var tasksbackground = document.querySelector('.tasks');
+        var tasklength = document.querySelectorAll('.delete').length;
+        if (tasklength == 5) {
+            tasksbackground.style.background = "orange";
+            tasksbackground.style.transition = "1s";
+        } else if (tasklength == 7) {
+            tasksbackground.style.background = 'orangered';
+            tasksbackground.style.transition = "2s";
+        }
+    }
+    function fon2() {
+        var background = document.querySelector('.tasks');
+        var tasklength = document.querySelectorAll('.delete').length;
+        if (tasklength == 9) {
+            background.style.background = "red";
+            background.style.transition = "1s";
+        }
+        else if (tasklength < 5) {
+            background.style.background = "white";
+            background.style.transition = "1s";
+        }
+    }
+    setInterval(fon2, 100)
+    setInterval(fon, 100);
+    
+    function backgroundchange() {
+        var label = document.querySelector('#label');
+        var h1 = document.querySelector('#h1');
+        var dclass1 = document.querySelector('.dclass1');
+        var input = document.querySelector('#input');
+        var button = document.querySelector('#button1');
+        if (checkbox.checked) {
+            dclass1.style.transition = '1s';
+            dclass1.style.background = "white";
+            dclass1.style.borderColor = "black"
+            h1.style.transition = '1.5s';
+            h1.style.color = "#000000";
+            h1.style.transform = "rotateY(360deg)";
+            label.style.transition = '1s';
+            label.style.color = "#000000";
+            input.style.transition = '1s';
+            input.style.borderColor = "black";
+            button.style.transition = '2s';
+            button.style.borderColor = "black";
+            button.style.transform = "rotateY(360deg)";
+        }
+        else {
+            dclass1.style.transition = '1s';
+            dclass1.style.backgroundColor = "#043b4a";
+            dclass1.style.borderColor = "#043b4a"
+            h1.style.transition = '1.5s';
+            h1.style.color = "aliceblue";
+            h1.style.transform = "rotateY(-360deg)";
+            label.style.transition = '1s';
+            label.style.color = "white";
+            input.style.transition = '1s';
+            input.style.borderColor = "#043b4a";
+            button.style.transition = '2s';
+            button.style.borderColor = "#053c4d";
+            button.style.transform = "rotateY(-360deg)";
+        }
+    }
+    </script>
+    
+    <style>.dclass1 {
+    border: 2px solid #043b4a;
+    height: 520px;
+    width: 500px;
+    border-radius: 15px;
+    background-color: #043b4a;
+}
+.tasks {
+    border-radius: 18px;
+    border: 2px solid #043b4a;
+    width: 240px;
+    height: 400px;
+    position: absolute;
+    margin-top: -80px;
+    margin-left: 15px;
+    background-color: aliceblue;
+    list-style-type: none;
+}
+#hr1 {
+    margin-top: -10px;
+}
+h1 {
+    margin-left: 18px;
+    margin-top: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 1px;
+    color: aliceblue;
+    width: 160px;
+}
+#input {
+    border: 1.5px solid #043b4a;
+    position: absolute;
+    margin-left: 280px;
+    margin-top: 10px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+}
+#button1 {
+    margin-top: 60px;
+    margin-left: 310px;
+    width: 125px;
+    height: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.5px;
+    border: 1.5px solid white;
+    color: #053c4d;
+    letter-spacing: 0.5px;
+    background-image: -webkit-linear-gradient(45deg, #1b5a6c 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: all 600ms ease-in-out;
+    transition: all 600ms ease-in-out;
+}
+#button1:hover {
+    background-position: 0;
+    color: aliceblue;
+    border-color: white;
+    border: 1.5px solid;
+}
+#task {
+    width: 200px;
+    border: 1.5px solid #053c4d;
+    margin-top: 9px;
+    margin-left: 10px;
+    height: 25px;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 15px;
+    padding-top: 6px;
+    color: black;
+    background-color:rgb(240, 240, 240);
+    font-family: 'Times New Roman', Times, serif;
+}
+.delete {
+    background-color: #f4f4f4;
+    width: 23px;
+    border: 1.5px solid #000000;
+    position: absolute;
+    margin-top: -1px;
+    height: 10px;
+    margin-left: 165px;
+    transition: all 0.3s;
+    padding-bottom: 18px;
+    font-size: 11px;
+    font-family:cursive;
+    border-radius: 9px;
+    font-weight: bold;
+}
+.delete:hover {
+    border-radius: 10px;
+    width: 23px;
+    color: rgb(79, 77, 77);
+    border: 1.5px solid white;
+}
+#checkbox {
+    position: absolute;
+    margin-top: 395px;
+    margin-left: -140px;
+}
+label {
+    margin-left: -120px;
+    margin-top: 393px;
+    color: white;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+}
+    </style>
