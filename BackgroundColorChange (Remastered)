@@ -1,0 +1,128 @@
+<head>
+<script>
+            function backround() {
+                switch(op) {
+                    case 1:
+                        document.body.style.transition = "800ms";
+                        document.body.style.background = 'green';
+                        break;
+                    case 2:
+                        document.body.style.transition = "800ms";
+                        document.body.style.background = 'red';
+                        break;
+                    case 3:
+                        document.body.style.transition = "800ms";
+                        document.body.style.background = 'black';
+                        break;
+                    case 4:
+                        document.body.style.transition = "800ms";
+                        document.body.style.background = 'blue';
+                        break;
+                    default:
+                        alert("Ээээээ");
+                        break;
+                }
+            } 
+</head>
+
+<body>
+        <div class="class1">
+            <hr id="hr2">
+            <button onclick="op=1;backround()" id="green">Green</button>
+            <button onclick="op=2;backround()"id="red">Red</button>
+            <br>
+            <button onclick="op=3;backround()"id="black">Black</button>
+            <button onclick="op=4;backround()" id="blue">Blue</button>
+            <hr id="hr">
+        </div>
+ </body>
+ 
+ <style>
+ @import url('http://fonts.cdnfonts.com/css/blanka');
+.class1 {
+    height: 150px;
+    display:inline-block;
+    width: 400px;
+    margin-left: 380px;
+    margin-top: 150px;
+    border-radius: 10px;
+    background: linear-gradient(45deg,blue,red, green, black);
+}
+#green {
+    padding-bottom: 5px;
+    font-family:'Blanka';
+    border: 1.5px solid green;
+    border-radius: 5px;
+    width: 120px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 70px;
+    letter-spacing: 1px;
+    transition: all 600ms;
+}
+#green:hover {
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    background-color: rgb(9, 148, 9);
+    color: white;
+    font-size: 14px;
+    border: 1.5px solid white;
+}
+#red {
+    padding-bottom: 5px;
+    font-family:'Blanka';
+    border: 1.5px solid rgb(207, 0, 0);
+    border-radius: 5px;
+    margin-left: 20px;
+    width: 120px;
+    height: 30px;
+    letter-spacing: 1px;
+    transition: all 600ms;
+}
+#red:hover {
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    background-color: rgb(207, 0, 0);
+    color: white;
+    font-size: 14px;
+    border: 1.5px solid white;
+}
+#black {
+    padding-bottom: 5px;
+    font-family:'Blanka';
+    border: 1.5px solid black;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 70px;
+    margin-top: 10px;
+    width: 120px;
+    letter-spacing: 1px;
+    transition: all 600ms;
+}
+#black:hover {
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    border: 1.5px solid white;
+}
+#blue {
+    padding-bottom: 5px;
+    font-family:'Blanka';
+    border: 1.5px solid blue;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 20px;
+    width: 120px;
+    letter-spacing: 1px;
+    transition: all 600ms;
+}
+#blue:hover {
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    background-color:blue;
+    color: white;
+    font-size: 14px;
+    border: 1.5px solid white;
+}
+#hr {
+    margin-top: 33px;
+}
+ </style>
