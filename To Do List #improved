@@ -1,0 +1,150 @@
+<html>
+    <head>
+    <style>
+    @import url('http://fonts.cdnfonts.com/css/blanka');
+@import url('http://fonts.cdnfonts.com/css/chivo');
+@import url('http://fonts.cdnfonts.com/css/quantum');
+
+.class1 {
+    height: 390px;
+    width: 460px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgb(49, 134, 165), rgb(16, 173, 194), rgb(10, 161, 131));
+}
+#myinput {
+    position: absolute;
+    border: 0.1px solid black;
+    width: 180px;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-left: 20px;
+    height: 26px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+#add {
+    border: 1.5px solid rgb(8, 127, 179);
+    margin-left: 260px;
+    margin-top: 15px;
+    font-size: 16px;
+    width: 110px;
+    height: 25px;
+    border-radius: 5px;
+    color: #000000;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-transition: color 150ms ease-in-out;
+    transition: color 150ms ease-in-out;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#add::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: #1f4b55;
+    z-index: -1;
+    -webkit-transition: width 150ms ease-in-out;
+    transition: width 150ms ease-in-out;
+}
+#add:hover {
+    color: #fff;
+  }
+#add:hover:after {
+    width: 110%;
+}
+.tasklist {
+    position: inherit;
+    border-radius: 8px;
+    margin-top: 40px;
+    margin-left: 20px;
+    width: 350px;
+    height: 300px;
+    background-color: white;
+    overflow: auto;
+}
+#DIV {
+    margin-top: 8px;
+    margin-left: 10px;
+    border: 1.5px solid rgb(0, 114, 125);
+    border-radius: 5px;
+    background-color:#1f4b55;
+    height: 35px;
+    width: 325px;
+}
+#delete {
+    margin-left: 230px;
+    margin-top: -39px;
+    width: 80px;
+    font-family: 'Blanka';
+    padding-bottom: 4px;
+    border-style: none;
+    border-radius: 3px;
+    background-color: rgb(10, 219, 10);
+    color: white;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+}
+#delete:hover {
+    background-color: rgb(254, 1, 1);
+    color: rgb(255, 255, 255);
+}
+#ptext {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Aleo';
+}
+    </style>
+    </head>
+    <body>
+        <div class="class1">
+            <input type="text" id="myinput" placeholder="Add Task Name...">
+            <button id="add" onclick="add()">Add Task</button>
+            <br>
+            <div class="tasklist">
+            </div>
+        </div>
+
+        <script>
+            function add() {
+                var tasklist = document.querySelector(".tasklist");
+                var p = document.createElement('p');
+                var input = document.getElementById('myinput').value;
+                var button = document.createElement('button');
+                button.id = 'delete';
+                p.id = 'ptext';
+
+                var div = document.createElement('div');
+                div.id = 'DIV';
+
+                button.onclick = function() {
+                    var list = document.querySelectorAll(".tasklist");
+                    for (var i = 0; i<list.length; i++) {
+                        this.parentNode.remove();
+                    }
+                }
+
+                if (input === '') {
+                    alert("Write Something");
+                }
+                else {
+                    tasklist.appendChild(div);
+                    div.appendChild(p);
+                    p.innerHTML = input;
+                    div.appendChild(button);
+                    button.innerHTML = "Delete";
+                }
+                document.getElementById("myinput").value = "";
+
+            }
+        </script>
+    </body>
+</html>
